@@ -1,0 +1,13 @@
+examples/
+
+*.pptx
+*.pdf
+*.odt
+
+*_exe
+*.txt
+
+_deps
+CMakeFiles/
+
+!CMakeLists.txt
