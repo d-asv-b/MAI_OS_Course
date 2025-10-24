@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build current cpp",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",                      // include debug symbols
+        "${file}",                 // compile the currently open file
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}.exe" // output binary
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Builds the currently open C++ file."
+    }
+  ]
+}
