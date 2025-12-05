@@ -1,8 +1,9 @@
 {
-    "name": "C++ MAI OS Course",
+    "name": "C++ MAI OS",
     "dockerFile": "Dockerfile",
     "context": "..",
     "appPort": [],
+    "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
     "customizations": {
         "vscode": {
             "extensions": [
