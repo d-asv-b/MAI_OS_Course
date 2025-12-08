@@ -1,8 +1,8 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra -O2
+CXXFLAGS = -std=c++20 -Wall -Wextra -O2
 LDFLAGS = -lrt -pthread
 
-TARGET = main
+TARGET = main.exe
 SOURCE = main.cpp
 
 .PHONY: all clean run

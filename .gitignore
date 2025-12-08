@@ -11,3 +11,5 @@ _deps
 CMakeFiles/
 
 !CMakeLists.txt
+
+build/

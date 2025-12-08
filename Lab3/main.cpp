@@ -6,8 +6,8 @@
 #include <fstream>
 
 #define BUFFER_SIZE 1024
-#define MMAP_FILE_1 "mmap_child1.dat"
-#define MMAP_FILE_2 "mmap_child2.dat"
+#define MMAP_FILE_1 "mmap_child1"
+#define MMAP_FILE_2 "mmap_child2"
 
 struct SharedData {
     bool ready;
