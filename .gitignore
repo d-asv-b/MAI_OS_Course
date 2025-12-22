@@ -5,11 +5,14 @@ examples/
 *.odt
 
 *_exe
+*.exe
 *.txt
 
 _deps
 CMakeFiles/
-
+.cmake
 !CMakeLists.txt
 
 build/
+
+strace_lab*

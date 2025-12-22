@@ -13,7 +13,6 @@ def generate_and_calculate():
         print("Ошибка: Количество чисел должно быть положительным.")
         return
 
-    MAX_VALUE = (1 << BITS) - 1
     total_sum = 0
     
     print(f"\nНачало генерации и записи {num_count} чисел в файл '{DATA_FILE}'...")
@@ -24,14 +23,11 @@ def generate_and_calculate():
         for _ in range(num_count):
             random_512_bit_int = random.getrandbits(BITS)
             total_sum += random_512_bit_int
-            hex_str = f"{random_512_bit_int:0{BITS//4}x}"
+            hex_str = hex(random_512_bit_int)
             
-            f.write(f"0x{hex_str}\n")
-    average_value_float = total_sum / num_count
-    if average_value_float - int(average_value_float) >= 0.5:
-            rounded_average_value = int(average_value_float) + 1
-    else:
-            rounded_average_value = int(average_value_float)
+            f.write(f"{hex_str}\n")
+    
+    rounded_average_value = (total_sum + num_count // 2) // num_count
         
     print(f"Запись среднего арифметического в файл '{AVERAGE_FILE}'...")
     
@@ -41,7 +37,7 @@ def generate_and_calculate():
         f.write(f"Общая сумма (Sum): {total_sum}\n\n")
         
         # Результат в HEX
-        hex_average = f"{rounded_average_value:x}"
+        hex_average = hex(rounded_average_value)
         f.write(f"HEX: {hex_average}\n")
         
         # Результат в DEC

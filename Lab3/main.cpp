@@ -99,9 +99,9 @@ int main() {
     }
 
     // Очистка файлов
-    std::ofstream outFile1(file1, std::ios::trunc);
+    std::ofstream outFile1(file1 + ".txt", std::ios::trunc);
     outFile1.close();
-    std::ofstream outFile2(file2, std::ios::trunc);
+    std::ofstream outFile2(file2 + ".txt", std::ios::trunc);
     outFile2.close();
 
     unlink(MMAP_FILE_1);
@@ -158,7 +158,7 @@ int main() {
     }
 
     if (pid1 == 0) {
-        childProcess(1, file1, MMAP_FILE_1);
+        childProcess(1, file1 + ".txt", MMAP_FILE_1);
     }
 
     pid_t pid2 = fork();
@@ -168,7 +168,7 @@ int main() {
     }
 
     if (pid2 == 0) {
-        childProcess(2, file2, MMAP_FILE_2);
+        childProcess(2, file2 + ".txt", MMAP_FILE_2);
     }
 
     sleep(1);
