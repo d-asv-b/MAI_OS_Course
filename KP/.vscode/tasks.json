@@ -4,20 +4,11 @@
             {
                 "label": "build current lab",
                 "type": "shell",
-                "command": "cd ${workspaceFolder} && cmake . -B build && cmake --build build",
+                "command": "cd ${workspaceFolder} && cmake . && make",
                 "group": {
                     "kind": "build",
                     "isDefault": true
                 },
-                "problemMatcher": [
-                    "$gcc"
-                ]
-            },
-            {
-                "label": "rebuild current lab",
-                "type": "shell",
-                "command": "cd ${workspaceFolder} && rm -rf build/* && cmake . -B build && cmake --build build",
-                "group": "build",
                 "problemMatcher": [
                     "$gcc"
                 ]

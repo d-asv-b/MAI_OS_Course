@@ -9,8 +9,9 @@ examples/
 *.txt
 
 _deps
+Makefile
 CMakeFiles/
-.cmake
+*.cmake
 !CMakeLists.txt
 
 build/
